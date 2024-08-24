@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	event = "BufWritePost",
+	event = "VeryLazy",
 
 	opts = {
 		formatters_by_ft = {

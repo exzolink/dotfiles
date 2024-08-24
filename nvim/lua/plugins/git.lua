@@ -1,11 +1,14 @@
 return {
 	{
 		"rbong/vim-flog",
+		event = "VeryLazy",
 		cmd = { "Flog", "Flogsplit", "Floggit" },
 		dependencies = { "tpope/vim-fugitive" },
 	},
 	{
 		"tpope/vim-fugitive",
+		event = "VeryLazy",
+		
 		config = function()
 			vim.keymap.set("n", "<leader>gb", ":Git blame<cr>", { desc = "[G]it [B]lame" })
 			vim.keymap.set("n", "<leader>gA", ":Git add .<cr>", { desc = "[G]it Add [A]ll" })

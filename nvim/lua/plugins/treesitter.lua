@@ -1,5 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+	build = ":TSUpdate",
 
 	opts = {
 		ensure_installed = {
@@ -26,9 +28,6 @@ return {
 			end,
 		},
 		incremental_selection = {
-			enable = true,
-		},
-		autotag = {
 			enable = true,
 		},
 	},

@@ -9,6 +9,7 @@ return {
 				"prettier",
 				"eslint_d",
 				"vue-language-server",
+				"emmet-language-server",
 			},
 			ui = {
 				border = "rounded",
@@ -17,6 +18,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 
 		config = function()
 			require("nvchad.configs.lspconfig").defaults()
@@ -47,6 +49,17 @@ return {
 					vue = {
 						hybridMode = false,
 					},
+				},
+			})
+
+			lspconfig.emmet_language_server.setup({
+				filetypes = {
+					"scss",
+					"html",
+					"css",
+					"sass",
+					"less",
+					"pug",
 				},
 			})
 

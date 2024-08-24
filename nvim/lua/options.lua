@@ -10,6 +10,8 @@ local function escape(str)
 	return vim.fn.escape(str, escape_chars)
 end
 
+vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,terminal"
+
 vim.opt.wrap = false
 vim.opt.linebreak = false
 

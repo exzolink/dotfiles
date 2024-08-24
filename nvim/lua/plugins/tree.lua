@@ -1,9 +1,5 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	dependencies = {
-		"windwp/nvim-ts-autotag",
-	},
-	build = ":TSUpdate",
 
 	opts = {
 		view = {
