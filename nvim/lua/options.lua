@@ -10,11 +10,14 @@ local function escape(str)
 	return vim.fn.escape(str, escape_chars)
 end
 
-vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,terminal"
-
+-- Vim options
+vim.opt.sessionoptions = { "buffers", "curdir", "folds", "help", "tabpages", "winsize", "terminal" }
+vim.opt.mousescroll = { "ver:6", "hor:6" }
+vim.opt.sidescrolloff = 6
 vim.opt.wrap = false
-vim.opt.linebreak = false
+vim.opt.timeoutlen = 300
 
+-- Custom options
 vim.opt.langmap = vim.fn.join({
 	escape(ru_shift) .. ";" .. escape(en_shift),
 	escape(ru) .. ";" .. escape(en),

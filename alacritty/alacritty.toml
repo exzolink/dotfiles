@@ -1,36 +1,35 @@
 shell = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+live_config_reload = false
 
 [window]
 position = { x = 350, y = 125 }
 dimensions = { columns = 128, lines = 36 }
-opacity = 0.95
+# opacity = 0.95
 decorations_theme_variant = "Dark"
 
 [scrolling]
 history = 12000
+multiplier = 6
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 size = 11.25
 
-[[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F11"
+[keyboard]
+bindings = [
+  { key = "K", mods = "Control|Shift", action = "ScrollPageUp" },
+  { key = "J", mods = "Control|Shift", action = "ScrollPageDown" },
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Home", action = "CreateNewWindow" },
+]
 
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "K"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "J"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "CreateNewWindow"
-key = "Home"
+[cursor]
+style = { blinking = "Always" }
+blink_timeout = 0
+blink_interval = 500
+unfocused_hollow = false
+thickness = 0.3
 
 [colors.primary]
 background = "#191828"

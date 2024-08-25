@@ -32,7 +32,7 @@ return {
 
 			local servers = { "html", "cssls" }
 
-			for _, lsp in ipairs(servers) do
+			for _, lsp in pairs(servers) do
 				lspconfig[lsp].setup({
 					on_attach = nvlsp.on_attach,
 					on_init = nvlsp.on_init,

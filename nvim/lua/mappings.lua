@@ -4,7 +4,10 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+map("n", ";", ":", { desc = "Command mode" })
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- horizontal mouse scrolling
+map("n", "<S-ScrollWheelDown>", "6zl", { noremap = true, silent = true })
+map("n", "<S-ScrollWheelUp>", "6zh", { noremap = true, silent = true })
+map("i", "<S-ScrollWheelDown>", "<C-o>$", { noremap = true, silent = true })
+map("i", "<S-ScrollWheelUp>", "<C-o>^", { noremap = true, silent = true })

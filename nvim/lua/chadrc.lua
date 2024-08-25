@@ -13,6 +13,8 @@ M.base46 = {
 			special = "orange",
 			underline = true,
 		},
+
+		-- Nvim Tree Highlights
 		NvimTreeDiagnosticErrorFileHL = {
 			fg = "red",
 		},
@@ -25,6 +27,14 @@ M.base46 = {
 		NvimTreeDiagnosticHintFileHL = {
 			fg = "purple",
 		},
+
+		-- Barbar Highlights
+		BufferOffset = {
+			bg = "darker_black",
+		},
+		BufferTabpageFill = {
+			bg = "black2",
+		},
 	},
 }
 
@@ -35,6 +45,7 @@ M.ui = {
 	},
 
 	tabufline = {
+		enabled = false,
 		lazyload = false,
 	},
 }
