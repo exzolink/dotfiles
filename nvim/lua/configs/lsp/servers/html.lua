@@ -3,9 +3,9 @@ return {
 		local lspconfig = require("lspconfig")
 
 		lspconfig.html.setup({
-      on_attach = on_attach,
-      on_init = on_init,
-      capabilities = capabilities,
-    })
+			on_attach = on_attach,
+			on_init = on_init,
+			capabilities = capabilities,
+		})
 	end,
 }
