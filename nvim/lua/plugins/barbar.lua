@@ -13,12 +13,13 @@ return {
 			maximum_padding = 1,
 			minimum_padding = 1,
 			maximum_length = 24,
-			no_name_title = "Unknown",
-			highlight_visible = false,
+			no_name_title = "No Name",
 
 			icons = {
-				separator = { right = " " },
-				inactive = { button = "󰅖", separator = { right = " " } },
+				button = "",
+				current = { separator = { right = " " } },
+				inactive = { separator = { right = " " } },
+				visible = { separator = { right = " " } },
 
 				diagnostics = {
 					[vim.diagnostic.severity.ERROR] = { enabled = true },
@@ -42,6 +43,10 @@ return {
 		end
 
 		tree_api.events.subscribe(Event.TreeOpen, function()
+			bar_api.set_offset(getNvimTreeWidth())
+		end)
+
+		tree_api.events.subscribe(Event.Resize, function()
 			bar_api.set_offset(getNvimTreeWidth())
 		end)
 

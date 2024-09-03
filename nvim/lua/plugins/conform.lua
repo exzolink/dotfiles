@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 
 	opts = {
 		formatters_by_ft = {
@@ -17,6 +17,7 @@ return {
 		format_after_save = {
 			timeout_ms = 1000,
 			lsp_fallback = true,
+			async = true,
 		},
 	},
 }

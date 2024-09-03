@@ -25,9 +25,6 @@ bindings = [
 ]
 
 [cursor]
-style = { blinking = "Always" }
-blink_timeout = 0
-blink_interval = 500
 unfocused_hollow = false
 thickness = 0.3
 

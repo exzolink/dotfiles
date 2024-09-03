@@ -20,7 +20,7 @@ return {
 			return diagnostic
 		end)
 
-		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave", "CursorHoldI" }, {
 			callback = function()
 				lint.try_lint()
 			end,

@@ -4,6 +4,7 @@ return {
 
   opts = {
     dir = "/Users/1/.local/state/nvim/sessions",
+    pre_save = function() vim.api.nvim_exec_autocmds("User", { pattern = "SessionSavePre" }) end,
   },
   keys = {
     { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },

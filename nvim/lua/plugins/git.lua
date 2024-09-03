@@ -1,20 +1,25 @@
 return {
 	{
-		"rbong/vim-flog",
-		event = "VeryLazy",
-		cmd = { "Flog", "Flogsplit", "Floggit" },
-		dependencies = { "tpope/vim-fugitive" },
+		"kdheepak/lazygit.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } },
+
+		config = function()
+			require("telescope").load_extension("lazygit")
+		end,
 	},
 	{
-		"tpope/vim-fugitive",
-		event = "VeryLazy",
-		
-		config = function()
-			vim.keymap.set("n", "<leader>gb", ":Git blame<cr>", { desc = "[G]it [B]lame" })
-			vim.keymap.set("n", "<leader>gA", ":Git add .<cr>", { desc = "[G]it Add [A]ll" })
-			vim.keymap.set("n", "<leader>ga", "Git add", { desc = "[G]it [A]dd" })
-			vim.keymap.set("n", "<leader>gc", ":Git commit", { desc = "[G]it [C]ommit" })
-			vim.keymap.set("n", "<leader>gp", "Git push", { desc = "[G]it [P]ush" })
-		end,
+		"lewis6991/gitsigns.nvim",
+
+		opts = {
+			current_line_blame = true,
+		},
 	},
 }
