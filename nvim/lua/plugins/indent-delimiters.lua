@@ -9,33 +9,39 @@ local highlight = {
 }
 
 return {
-	"lukas-reineke/indent-blankline.nvim",
-	dependencies = {
-		{
-			"HiPhish/rainbow-delimiters.nvim",
-			config = function()
-				dofile(vim.g.base46_cache .. "rainbowdelimiters")
+	{
+		"lukas-reineke/indent-blankline.nvim",
 
-				require("rainbow-delimiters.setup").setup({
-					highlight = highlight,
-					blacklist = { "html", "vue" },
-				})
-			end,
+		opts = {
+			scope = {
+				highlight = highlight,
+			},
 		},
+		config = function(_, opts)
+			dofile(vim.g.base46_cache .. "blankline")
+
+			local hooks = require("ibl.hooks")
+			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+			require("ibl").setup(opts)
+
+			dofile(vim.g.base46_cache .. "blankline")
+		end,
 	},
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		event = { "BufReadPost", "BufNewFile" },
 
-	opts = {
-		scope = {
-			highlight = highlight,
-		},
+		config = function()
+			dofile(vim.g.base46_cache .. "rainbowdelimiters")
+
+			require("rainbow-delimiters.setup").setup({
+				highlight = highlight,
+				query = {
+					html = "rainbow-no-tags",
+					vue = "rainbow-no-tags",
+					tsx = "rainbow-parens",
+				},
+			})
+		end,
 	},
-	config = function(_, opts)
-		dofile(vim.g.base46_cache .. "blankline")
-
-		local hooks = require("ibl.hooks")
-		hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-		require("ibl").setup(opts)
-
-		dofile(vim.g.base46_cache .. "blankline")
-	end,
 }

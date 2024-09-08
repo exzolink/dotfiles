@@ -69,9 +69,7 @@ return {
 			},
 		})
 
-		options.performance = {
-			max_view_entries = 30,
-		}
+		options.performance = { max_view_entries = 30 }
 
 		return options
 	end,

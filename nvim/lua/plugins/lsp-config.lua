@@ -3,15 +3,15 @@ return {
 		"williamboman/mason.nvim",
 
 		opts = {
-			ensure_installed = {
-				"html-lsp",
-				"css-lsp",
-				"prettier",
-				"eslint_d",
-				"vue-language-server",
-				"vtsls",
-				"emmet-language-server",
-			},
+			-- ensure_installed = {
+			-- 	"html-lsp",
+			-- 	"css-lsp",
+			-- 	"prettier",
+			-- 	"eslint_d",
+			-- 	"vue-language-server",
+			-- 	"vtsls",
+			-- 	"emmet-language-server",
+			-- },
 		},
 	},
 	{

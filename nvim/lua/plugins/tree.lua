@@ -2,10 +2,15 @@ return {
 	"nvim-tree/nvim-tree.lua",
 
 	opts = {
+		select_prompts = true,
+
 		view = {
+			debounce_delay = 50,
+			signcolumn = "auto",
 			width = {
 				min = 36,
 				max = 40,
+				padding = 0,
 			},
 		},
 

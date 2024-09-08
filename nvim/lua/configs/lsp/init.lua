@@ -5,8 +5,10 @@ require("nvchad.configs.lspconfig").defaults()
 local nvlsp = require("nvchad.configs.lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-local servers = { "html", "css", "typescript", "volar", "emmet" }
 local capabilities = cmp_nvim_lsp.default_capabilities(nvlsp.capabilities)
+capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFoldingOnly = true }
+
+local servers = { "html", "css", "volar", "typescript", "emmet" }
 
 for _, lsp in pairs(servers) do
 	local server_config_ok, mod = pcall(require, "configs.lsp.servers." .. lsp)

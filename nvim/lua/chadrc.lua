@@ -1,9 +1,8 @@
--- This file needs to have same structure as nvconfig.lua
--- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
-
---- @type ChadrcConfig
-
 local M = {}
+
+local colors = {
+	dark = { "darker_black", -3 },
+}
 
 M.base46 = {
 	theme = "catppuccin",
@@ -17,19 +16,18 @@ M.base46 = {
 
 	hl_add = {
 		DiagnosticUnderlineError = { special = "red", undercurl = true },
-		GitSignsCurrentLineBlame = { fg = "grey_fg2" },
+		GitSignsCurrentLineBlame = { link = "LspInlayHint" },
+		TelescopePromptCounter = { fg = "light_grey" },
+		UfoFoldedEllipsis = { fg = "nord_blue" },
 
-		-- Nvim Tree Highlights
 		NvimTreeDiagnosticErrorFileHL = { fg = "red" },
 		NvimTreeDiagnosticWarnFileHL = { fg = "yellow" },
 		NvimTreeDiagnosticInfoFileHL = { fg = "green" },
 		NvimTreeDiagnosticHintFileHL = { fg = "purple" },
 
-		-- Treesitter Context Highlights
 		TreesitterContext = { bg = "one_bg" },
 		TreesitterContextLineNumber = { fg = "grey_fg2", bg = "one_bg" },
 
-		-- Barbar Highlights
 		BufferOffset = { bg = "darker_black" },
 		BufferTabpageFill = { bg = "darker_black" },
 		BufferScrollArrow = { fg = "white", bg = "darker_black", bold = true },
@@ -48,10 +46,21 @@ M.base46 = {
 	},
 
 	hl_override = {
+		NormalFloat = { bg = colors.dark },
+		WinSeparator = { link = "NvimTreeWinSeparator" },
 		CursorLineNr = { fg = "purple", bold = true },
-		LspInlayHint = { bg = "NONE" },
+		LspInlayHint = { fg = "grey_fg2", bg = "NONE" },
 
-		-- Indent Scope Highlights
+		FoldColumn = { fg = "light_grey", bg = "NONE" },
+		Folded = { bg = { "black", "nord_blue", 18 } },
+
+		TelescopeNormal = { link = "NormalFloat" },
+		TelescopeBorder = { fg = colors.dark, bg = colors.dark },
+		TelescopeResultsTitle = { link = "TelescopeBorder" },
+
+		CmpDoc = { link = "NormalFloat" },
+		CmpDocBorder = { fg = colors.dark, bg = colors.dark },
+
 		["@ibl.scope.underline.1"] = { bg = { "black", "red", 10 } },
 		["@ibl.scope.underline.2"] = { bg = { "black", "yellow", 10 } },
 		["@ibl.scope.underline.3"] = { bg = { "black", "blue", 10 } },

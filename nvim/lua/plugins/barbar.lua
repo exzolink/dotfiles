@@ -1,10 +1,7 @@
 return {
 	"romgrk/barbar.nvim",
 	lazy = false,
-	dependencies = {
-		"nvim-tree/nvim-tree.lua",
-		"nvim-tree/nvim-web-devicons",
-	},
+	dependencies = { "nvim-tree/nvim-tree.lua", "nvim-tree/nvim-web-devicons" },
 	init = function() vim.g.barbar_auto_setup = false end,
 
 	config = function()
