@@ -52,12 +52,6 @@ M.base46 = {
     BufferCurrentWARN = { fg = "sun", bg = "darker_black" },
     BufferVisibleWARN = { link = "BufferCurrentWARN" },
     BufferInactiveWARN = { link = "BufferInactive" },
-    BufferCurrentINFO = { fg = "cyan", bg = "darker_black" },
-    BufferVisibleINFO = { link = "BufferCurrentINFO" },
-    BufferInactiveINFO = { link = "BufferInactive" },
-    BufferCurrentHINT = { fg = "nord_blue", bg = "darker_black" },
-    BufferVisibleHINT = { link = "BufferCurrentHINT" },
-    BufferInactiveHINT = { link = "BufferInactive" },
   },
 
   hl_override = {
