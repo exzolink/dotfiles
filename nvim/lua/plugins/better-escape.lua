@@ -1,5 +1,5 @@
 return {
 	"max397574/better-escape.nvim",
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 	opts = {},
 }

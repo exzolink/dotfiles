@@ -15,7 +15,7 @@ return {
 		},
 
 		format_after_save = {
-			timeout_ms = 1000,
+			timeout_ms = 2000,
 			lsp_fallback = true,
 			async = true,
 		},

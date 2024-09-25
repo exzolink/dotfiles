@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+		event = "VeryLazy",
 		build = ":TSUpdate",
 
 		opts = {
@@ -13,9 +13,8 @@ return {
 				"javascript",
 				"vue",
 				"tsx",
-				"markdown",
-				"markdown_inline",
 			},
+
 			highlight = {
 				enable = true,
 				additional_vim_regex_highlighting = false,
@@ -28,6 +27,7 @@ return {
 					end
 				end,
 			},
+
 			incremental_selection = {
 				enable = true,
 			},
@@ -35,8 +35,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-
+		event = { "BufReadPost", "BufNewFile" },
 		opts = { max_lines = 3 },
 	},
 }

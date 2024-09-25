@@ -1,8 +1,5 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-
-	opts = {
-		delay = 750,
-	},
+	opts = { delay = 750 },
 }

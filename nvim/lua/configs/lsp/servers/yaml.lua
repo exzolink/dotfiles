@@ -2,22 +2,17 @@ return {
   setup = function(on_attach, on_init, capabilities)
     local lspconfig = require("lspconfig")
 
-    lspconfig.cssls.setup({
+    lspconfig.yamlls.setup({
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,
 
       settings = {
-        css = {
-          validate = true,
-          lint = {
-            unknownAtRules = "ignore",
-          },
-        },
-        scss = {
-          validate = true,
-          lint = {
-            unknownAtRules = "ignore",
+        yaml = {
+          schemas = require("schemastore").yaml.schemas(),
+          schemaStore = {
+            enable = false,
+            url = "",
           },
         },
       },

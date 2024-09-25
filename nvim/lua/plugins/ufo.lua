@@ -3,8 +3,8 @@ return {
 	event = { "BufReadPost", "BufNewFile" },
 	dependencies = { "kevinhwang91/promise-async" },
 
-	config = function()
-		require("ufo").setup({
+	opts = function()
+		return {
 			open_fold_hl_timeout = 0,
 			close_fold_kinds_for_ft = { default = { "imports" } },
 			preview = {
@@ -30,7 +30,7 @@ return {
 				local curWidth = 0
 				local newVirtText = {}
 
-				for _, chunk in pairs(virtText) do
+				for _, chunk in ipairs(virtText) do
 					local chunkText = chunk[1]
 					local chunkWidth = vim.fn.strdisplaywidth(chunkText)
 
@@ -53,8 +53,9 @@ return {
 			provider_selector = function(_, filetype, buftype)
 				return (filetype == "" or buftype == "nofile") and "indent" or { "lsp", "indent" }
 			end,
-		})
+		}
 	end,
+
 	keys = {
 		{ "zR", function() require("ufo").openAllFolds() end, desc = "Open all folds" },
 		{ "zM", function() require("ufo").closeAllFolds() end, desc = "Close all folds" },

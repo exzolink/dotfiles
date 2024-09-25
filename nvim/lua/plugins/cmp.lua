@@ -11,16 +11,15 @@ end
 return {
 	"hrsh7th/nvim-cmp",
 
-	opts = function()
+	opts = function(_, opts)
 		local cmp = require("cmp")
-		local options = require("nvchad.configs.cmp")
 
 		cmp.event:on("menu_closed", function()
 			local bufnr = vim.api.nvim_get_current_buf()
 			vim.b[bufnr]._vue_ts_cached_is_in_start_tag = nil
 		end)
 
-		options.sources = cmp.config.sources({
+		opts.sources = cmp.config.sources({
 			{
 				name = "nvim_lsp",
 				group_index = 1,
@@ -69,8 +68,8 @@ return {
 			},
 		})
 
-		options.performance = { max_view_entries = 30 }
+		opts.performance = { max_view_entries = 30 }
 
-		return options
+		return opts
 	end,
 }

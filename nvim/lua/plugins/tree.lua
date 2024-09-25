@@ -6,7 +6,6 @@ return {
 
 		view = {
 			debounce_delay = 50,
-			signcolumn = "auto",
 			width = {
 				min = 36,
 				max = 40,
@@ -20,7 +19,6 @@ return {
 
 		diagnostics = {
 			enable = true,
-
 			severity = {
 				min = vim.diagnostic.severity.WARN,
 				max = vim.diagnostic.severity.ERROR,

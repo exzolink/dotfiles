@@ -1,6 +1,6 @@
 return {
   "folke/flash.nvim",
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 
   opts = {
     jump = {
@@ -11,9 +11,10 @@ return {
       char = {
         jump_labels = true,
         multi_line = false,
-      }
-    }
+      },
+    },
   },
+
   keys = {
     { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
     { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },

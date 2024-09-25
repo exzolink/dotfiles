@@ -2,10 +2,10 @@ return {
 	"luukvbaal/statuscol.nvim",
 	lazy = false,
 
-	config = function()
+	opts = function()
 		local builtin = require("statuscol.builtin")
 
-		require("statuscol").setup({
+		return {
 			relculright = true,
 			ft_ignore = { "NvimTree" },
 			segments = {
@@ -13,6 +13,6 @@ return {
 				{ text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
 				{ text = { " ", builtin.foldfunc, " " }, click = "v:lua.ScFa" },
 			},
-		})
+		}
 	end,
 }
