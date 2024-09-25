@@ -4,11 +4,10 @@ live_config_reload = false
 [window]
 position = { x = 350, y = 125 }
 dimensions = { columns = 128, lines = 36 }
-# opacity = 0.95
 decorations_theme_variant = "Dark"
+# opacity = 0.95
 
 [scrolling]
-history = 12000
 multiplier = 6
 
 [font]
@@ -18,8 +17,6 @@ size = 11.25
 
 [keyboard]
 bindings = [
-  { key = "K", mods = "Control|Shift", action = "ScrollPageUp" },
-  { key = "J", mods = "Control|Shift", action = "ScrollPageDown" },
   { key = "F11", action = "ToggleFullscreen" },
   { key = "Home", action = "CreateNewWindow" },
 ]
