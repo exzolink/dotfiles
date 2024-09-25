@@ -7,14 +7,7 @@ return {
       on_init = on_init,
       capabilities = capabilities,
 
-      filetypes = {
-        "scss",
-        "html",
-        "css",
-        "sass",
-        "less",
-        "pug",
-      },
+      filetypes = { "html", "scss", "css", "sass", "less", "pug", "php" },
     })
   end,
 }

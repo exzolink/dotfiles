@@ -35,6 +35,7 @@ return {
           },
         },
       },
+      filetypes = { "html", "scss", "css", "sass", "less", "javascriptreact", "typescriptreact", "vue" },
     })
   end,
 }
