@@ -6,8 +6,8 @@ return {
 	opts = {},
 
 	keys = {
-		{ "<A-z>", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics" },
-		{ "<A-x>", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics" },
-		{ "<A-q>", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
+		{ "<A-z>", "<Cmd>Trouble diagnostics toggle<CR>", desc = "Diagnostics" },
+		{ "<A-x>", "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "Buffer Diagnostics" },
+		{ "<A-q>", "<Cmd>Trouble qflist toggle<CR>", desc = "Quickfix List" },
 	},
 }

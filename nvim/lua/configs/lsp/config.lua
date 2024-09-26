@@ -11,7 +11,7 @@ M.on_attach = function(client, bufnr)
 
   map("n", "gd", builtin.lsp_definitions, opts("Goto definition"))
   map("n", "gD", vim.lsp.buf.declaration, opts("Goto declaration"))
-  map("n", "gr", builtin.lsp_references, opts("Goto references"))
+  map("n", "gR", builtin.lsp_references, opts("Goto references"))
   map("n", "gi", builtin.lsp_implementations, opts("Goto implementation"))
   map("n", "<leader>D", builtin.lsp_type_definitions, opts("Goto type definition"))
   map("n", "<leader>ds", builtin.lsp_document_symbols, opts("Document symbols"))
