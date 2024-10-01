@@ -6,6 +6,7 @@ end
 
 local map = vim.keymap.set
 
+-- General
 map("n", ";", ":", { desc = "Command mode" })
 
 -- Horizontal mouse scrolling

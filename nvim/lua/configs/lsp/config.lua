@@ -4,7 +4,7 @@ local M = {}
 
 M.on_attach = function(client, bufnr)
   local function opts(desc)
-    return { buffer = bufnr, desc = "LSP " .. desc }
+    return { buffer = bufnr, desc = "LSP: " .. desc }
   end
 
   local builtin = require("telescope.builtin")
@@ -19,15 +19,12 @@ M.on_attach = function(client, bufnr)
   map("n", "<leader>sh", vim.lsp.buf.signature_help, opts("Show signature help"))
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
+  map("n", "<leader>ra", require("nvchad.lsp.renamer"), opts("Rename"))
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
 
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts("List workspace folders"))
-
-  map("n", "<leader>ra", function()
-    require("nvchad.lsp.renamer")()
-  end, opts("Rename"))
 
   if client.supports_method("textDocument/documentHighlight") then
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

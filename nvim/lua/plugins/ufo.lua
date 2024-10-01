@@ -1,6 +1,6 @@
 return {
 	"kevinhwang91/nvim-ufo",
-	event = { "BufReadPost", "BufNewFile" },
+	event = "User FilePost",
 	dependencies = { "kevinhwang91/promise-async" },
 
 	opts = function()

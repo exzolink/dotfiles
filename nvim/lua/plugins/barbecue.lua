@@ -1,6 +1,6 @@
 return {
 	"utilyre/barbecue.nvim",
-	event = { "BufReadPost", "BufNewFile" },
+	event = "User FilePost",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 		{ "SmiteshP/nvim-navic", opts = { lazy_update_context = true } },

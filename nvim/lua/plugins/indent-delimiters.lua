@@ -11,6 +11,7 @@ local highlight = {
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
+    dependencies = { "HiPhish/rainbow-delimiters.nvim" },
 
     opts = {
       scope = {
@@ -31,7 +32,7 @@ return {
   },
   {
     "HiPhish/rainbow-delimiters.nvim",
-    event = { "BufReadPost", "BufNewFile" },
+    event = "User FilePost",
 
     opts = {
       highlight = highlight,

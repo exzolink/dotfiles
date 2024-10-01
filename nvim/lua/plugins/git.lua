@@ -26,6 +26,19 @@ return {
       preview_config = {
         border = { { " ", "InputBorder" } },
       },
+
+      on_attach = function(bufnr)
+        local function opts(desc)
+          return { buffer = bufnr, desc = "Git: " .. desc }
+        end
+
+        local gitsigns = require("gitsigns")
+        local map = vim.keymap.set
+
+        map("n", "<leader>rh", gitsigns.reset_hunk, opts("Reset Hunk"))
+        map("n", "<leader>ph", gitsigns.preview_hunk, opts("Preview Hunk"))
+        map("n", "<leader>gb", function() gitsigns.blame_line({ full = true }) end, opts("Blame Line"))
+      end,
     },
   },
 }

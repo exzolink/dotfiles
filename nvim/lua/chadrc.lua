@@ -96,6 +96,9 @@ M.ui = {
 
   cmp = {
     style = "flat_dark",
+    format_colors = {
+      tailwind = true,
+    },
   },
 
   tabufline = {
