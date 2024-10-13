@@ -1,6 +1,6 @@
-local map = vim.keymap.set
-
 local M = {}
+
+local map = vim.keymap.set
 
 M.on_attach = function(client, bufnr)
   local function opts(desc)
@@ -8,6 +8,12 @@ M.on_attach = function(client, bufnr)
   end
 
   local builtin = require("telescope.builtin")
+  local code_action = client.server_capabilities.codeActionProvider
+
+  if type(code_action) == "table" then
+    local code_action_kinds = vim.b[bufnr]._code_action_kinds or {}
+    vim.b[bufnr]._code_action_kinds = vim.tbl_extend("force", code_action_kinds, code_action.codeActionKinds or {})
+  end
 
   map("n", "gd", builtin.lsp_definitions, opts("Goto definition"))
   map("n", "gD", vim.lsp.buf.declaration, opts("Goto declaration"))
@@ -20,7 +26,10 @@ M.on_attach = function(client, bufnr)
   map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
   map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
   map("n", "<leader>ra", require("nvchad.lsp.renamer"), opts("Rename"))
-  map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
+
+  map({ "n", "v" }, "<leader>ca", function()
+    vim.lsp.buf.code_action({ context = { only = vim.b[bufnr]._code_action_kinds } })
+  end, opts("Code action"))
 
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
