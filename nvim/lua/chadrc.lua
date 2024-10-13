@@ -22,6 +22,7 @@ M.base46 = {
     TelescopePromptCounter = { fg = "light_grey" },
     UfoFoldedEllipsis = { fg = "nord_blue" },
     CmpItemAbbrDeprecated = { fg = "light_grey" },
+    LspCodeLens = { link = "LspInlayHint" },
 
     NvimTreeDiagnosticErrorFileHL = { fg = "red" },
     NvimTreeDiagnosticWarnFileHL = { fg = "yellow" },
@@ -60,11 +61,11 @@ M.base46 = {
     CursorLineNr = { fg = "purple", bold = true },
     LspInlayHint = { fg = "grey_fg2", bg = "NONE" },
 
-    LspReferenceText = { fg = "NONE", bg = colors.dark_teal },
-    LspReferenceRead = { fg = "NONE", bg = colors.dark_teal },
-    LspReferenceWrite = { fg = "NONE", bg = colors.dark_teal },
+    LspReferenceText = { bg = colors.dark_teal },
+    LspReferenceRead = { bg = colors.dark_teal },
+    LspReferenceWrite = { bg = colors.dark_teal },
 
-    FoldColumn = { fg = "light_grey", bg = "NONE" },
+    FoldColumn = { fg = "light_grey" },
     Folded = { bg = colors.dark_blue },
 
     TelescopeNormal = { link = "NormalFloat" },

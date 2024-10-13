@@ -3,10 +3,9 @@ local vue_install_path = mason_registry.get_package("vue-language-server"):get_i
 local vue_language_server_path = vue_install_path .. "/node_modules/@vue/language-server"
 
 local server_config = {
+  tsserver = { maxTsServerMemory = 8192 },
   updateImportsOnFileMove = { enabled = "always" },
-  suggest = {
-    completeFunctionCalls = true,
-  },
+  suggest = { completeFunctionCalls = true },
   inlayHints = {
     enumMemberValues = { enabled = true },
     functionLikeReturnTypes = { enabled = true },
@@ -15,8 +14,13 @@ local server_config = {
     propertyDeclarationTypes = { enabled = true },
     variableTypes = { enabled = false },
   },
-  tsserver = {
-    maxTsServerMemory = 8192,
+  referencesCodeLens = {
+    enabled = true,
+    showOnAllFunctions = true,
+  },
+  implementationsCodeLens = {
+    enabled = true,
+    showOnInterfaceMethods = true,
   },
 }
 

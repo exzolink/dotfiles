@@ -1,7 +1,12 @@
 return {
   {
+    "nvchad/showkeys",
+    cmd = "ShowkeysToggle",
+  },
+  {
     "nvchad/minty",
-    keys = { { "<C-t>", function() require("minty.huefy").open() end, desc = "Color picker" } },
+    cmd = { "Shades", "Huefy" },
+    keys = { { "<C-t>", "<Cmd>Huefy<CR>", desc = "Color picker" } },
   },
   {
     "nvchad/menu",
