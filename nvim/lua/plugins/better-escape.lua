@@ -1,5 +1,5 @@
 return {
-	"max397574/better-escape.nvim",
-	event = "User FilePost",
-	opts = {},
+  "max397574/better-escape.nvim",
+  event = "User FilePost",
+  opts = {},
 }
