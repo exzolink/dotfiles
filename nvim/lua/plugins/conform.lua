@@ -14,10 +14,10 @@ return {
       vue = { "prettier" },
     },
 
-    format_after_save = {
-      timeout_ms = 2000,
-      lsp_fallback = true,
-      async = true,
-    },
+    -- format_after_save = {
+    --   timeout_ms = 2000,
+    --   lsp_fallback = true,
+    --   async = true,
+    -- },
   },
 }
