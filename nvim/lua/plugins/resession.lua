@@ -7,6 +7,9 @@ return {
       interval = 60,
       notify = false,
     },
+    extensions = {
+      barbar = {},
+    },
   },
 
   keys = {

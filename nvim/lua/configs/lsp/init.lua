@@ -8,7 +8,7 @@ capabilities.textDocument.foldingRange = { dynamicRegistration = false, lineFold
 config.overrides()
 nvlsp.defaults()
 
-local servers = { "html", "css", "volar", "tailwindcss", "typescript", "emmet", "prisma", "json", "yaml" }
+local servers = { "html", "css", "vue", "tailwindcss", "typescript", "emmet", "prisma", "json", "yaml" }
 for _, lsp in ipairs(servers) do
   local server_config_ok, mod = pcall(require, "configs.lsp.servers." .. lsp)
   if server_config_ok then
