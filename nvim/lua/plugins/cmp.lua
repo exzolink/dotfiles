@@ -22,7 +22,6 @@ return {
     opts.sources = cmp.config.sources({
       {
         name = "nvim_lsp",
-        group_index = 1,
 
         entry_filter = function(entry, ctx)
           if ctx.filetype ~= "vue" then
@@ -44,8 +43,7 @@ return {
           if cursor_before_line:sub(-1) == "@" then
             return entry.completion_item.label:match("^@")
           elseif cursor_before_line:sub(-1) == ":" then
-            return entry.completion_item.label:match("^:")
-              and not entry.completion_item.label:match("^:on%-")
+            return entry.completion_item.label:match("^:") and not entry.completion_item.label:match("^:on%-")
           elseif cursor_before_line:sub(-1) == "#" then
             local types = require("cmp.types")
             return entry.completion_item.kind == types.lsp.CompletionItemKind.Method
@@ -54,18 +52,9 @@ return {
           end
         end,
       },
-      {
-        name = "luasnip",
-        group_index = 2,
-      },
-      {
-        name = "buffer",
-        group_index = 3,
-      },
-      {
-        name = "path",
-        group_index = 4,
-      },
+      { name = "luasnip" },
+      { name = "buffer" },
+      { name = "async_path" },
     })
 
     opts.performance = { max_view_entries = 30 }
