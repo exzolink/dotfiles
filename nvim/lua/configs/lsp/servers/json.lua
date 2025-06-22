@@ -1,8 +1,8 @@
 return {
   setup = function(on_attach, on_init, capabilities)
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("jsonls")
 
-    lspconfig.jsonls.setup({
+    vim.lsp.config("jsonls", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,

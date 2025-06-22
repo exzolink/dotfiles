@@ -1,8 +1,8 @@
 return {
   setup = function(on_attach, on_init, capabilities)
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("emmet_language_server")
 
-    lspconfig.emmet_language_server.setup({
+    vim.lsp.config("emmet_language_server", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,

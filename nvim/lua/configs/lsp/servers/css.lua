@@ -1,8 +1,8 @@
 return {
   setup = function(on_attach, on_init, capabilities)
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("cssls")
 
-    lspconfig.cssls.setup({
+    vim.lsp.config("cssls", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,

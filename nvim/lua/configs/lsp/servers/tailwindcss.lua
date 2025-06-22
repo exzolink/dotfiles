@@ -1,8 +1,8 @@
 return {
   setup = function(on_attach, on_init, capabilities)
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("tailwindcss")
 
-    lspconfig.tailwindcss.setup({
+    vim.lsp.config("tailwindcss", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,

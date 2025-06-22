@@ -1,8 +1,8 @@
 return {
   setup = function(on_attach, on_init, capabilities)
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("prismals")
 
-    lspconfig.prismals.setup({
+    vim.lsp.config("prismals", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,
